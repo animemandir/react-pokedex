@@ -1,0 +1,55 @@
+.wrapper {
+  height: 40vh;
+  background-color: #F1C40F;
+}
+.wrapper .navigation-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .logo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url("../../img/14-146448_pokeball-pokemon-ball-pokeball-png_prev_ui.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 30px;
+  left: 30px;
+  animation-name: rotate;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.wrapper .pikachu {
+  position: absolute;
+  width: 20%;
+  height: 40vh;
+  background-image: url("../../img/465929_9fca0b5d6ace7e9f366b63a40f050e97_prev_ui.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  right: 30px;
+}
+
+@media only screen and (max-width: 750px) {
+  .pikachu {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=NavStyle.css.map */

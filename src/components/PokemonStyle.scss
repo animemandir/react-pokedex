@@ -1,0 +1,63 @@
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .card-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-style: italic;
+    img{
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .info-desc{
+    font-style: italic;
+  }
+
+
+  img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  .card-infoWeight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .info-vl {
+      border-left: 1px solid #f0f0f0;
+      height: 30px;
+    }
+
+    .info-pokemon {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .more-type {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .info-type {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

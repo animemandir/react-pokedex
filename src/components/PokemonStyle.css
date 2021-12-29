@@ -1,0 +1,56 @@
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.container .card-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.container .card-name img {
+  width: 30px;
+  height: 30px;
+}
+.container .info-desc {
+  font-style: italic;
+}
+.container img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+.container .card-infoWeight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .card-infoWeight .info-vl {
+  border-left: 1px solid #f0f0f0;
+  height: 30px;
+}
+.container .card-infoWeight .info-pokemon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .card-infoWeight .info-pokemon .more-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .card-infoWeight .info-pokemon .info-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=PokemonStyle.css.map */
