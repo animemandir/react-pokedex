@@ -5,7 +5,8 @@ const store = createSlice({
     initialState: {
         pokemons: [],
         paginatedData: [],
-        favoriteData: JSON.parse(localStorage.getItem('favoritePokemons')),
+        favoriteData:
+            Array.isArray(JSON.parse(localStorage.getItem('favoritePokemons'))) === false ? [] : JSON.parse(localStorage.getItem('favoritePokemons')),
         modalInfo: {
             visibility: false,
             name: 'pikachu'
