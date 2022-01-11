@@ -9,7 +9,7 @@ const store = createSlice({
             Array.isArray(JSON.parse(localStorage.getItem('favoritePokemons'))) === false ? [] : JSON.parse(localStorage.getItem('favoritePokemons')),
         modalInfo: {
             visibility: false,
-            name: 'pikachu'
+            name: 'pickachu'
         },
         alertInfo: false
     },

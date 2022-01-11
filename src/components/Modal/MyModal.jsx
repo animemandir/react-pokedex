@@ -13,16 +13,18 @@ function MyModal() {
 
     const handleOk = () => {
         dispatch(RESET_MODAL());
+        setResult({});
     };
 
     const handleCancel = () => {
         dispatch(RESET_MODAL());
+        setResult({});
     };
 
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
             .then(res => setResult(res.data));
-    }, [pokemonName])
+    }, [pokemonName]);
 
     return (
         Object.keys(result).length !== 0 ?

@@ -18,9 +18,9 @@ function Favorite() {
         dispatch(SET_ALERT_INFO(obj))
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         localStorage.setItem('favoritePokemons', JSON.stringify(favoriteData));
-    },[favoriteData])
+    }, [favoriteData])
 
     return (
         <div className='container'>
@@ -95,7 +95,6 @@ function Favorite() {
 
                         </div>
                     </>
-
 
                     :
                     <h1 style={{paddingBottom: 10}}>No favorite pokemons.</h1>
