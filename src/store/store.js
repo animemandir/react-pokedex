@@ -5,7 +5,11 @@ const store = createSlice({
     initialState: {
         pokemons: [],
         paginatedData: [],
-        favoriteData: [],
+        favoriteData: JSON.parse(localStorage.getItem('favoritePokemons')),
+        modalInfo: {
+            visibility: false,
+            name: 'pikachu'
+        },
         alertInfo: false
     },
     reducers: {
@@ -35,7 +39,7 @@ const store = createSlice({
             }
         },
         SET_FAVORITE_DATA(state, action) {
-            state.favoriteData.push(action.payload)
+            state.favoriteData.push(action.payload);
         },
 
         REMOVE_FAVORITE_POKEMON(state, action) {
@@ -54,7 +58,16 @@ const store = createSlice({
             if (title !== undefined)
                 state.alertInfo.title = title;
             state.alertInfo.show = !state.alertInfo.show;
-        }
+        },
+
+        RESET_MODAL(state){
+            state.modalInfo.visibility = !state.modalInfo.visibility;
+        },
+
+        SET_MODAL_INFO(state, action){
+            state.modalInfo.name = action.payload;
+        },
+
     },
 })
 
@@ -72,7 +85,9 @@ export const {
     SET_FAVORITE_DATA,
     RESET_ALERT,
     SET_ALERT_INFO,
-    REMOVE_FAVORITE_POKEMON
+    REMOVE_FAVORITE_POKEMON,
+    SET_MODAL_INFO,
+    RESET_MODAL
 } = store.actions
 
 export default state

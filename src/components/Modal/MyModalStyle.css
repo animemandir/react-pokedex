@@ -1,0 +1,27 @@
+.modal-content {
+  border: none;
+}
+.modal-content .pokemon-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+.modal-content .pokemon-type .info-type {
+  border: 1px solid #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.modal-content .pokemon-info {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+}
+.modal-content .pokemon-info span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+/*# sourceMappingURL=MyModalStyle.css.map */

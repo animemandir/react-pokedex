@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {Card} from "antd";
-import {REMOVE_FAVORITE_POKEMON, SET_ALERT_INFO} from "../../store/store";
+import {REMOVE_FAVORITE_POKEMON, RESET_MODAL, SET_ALERT_INFO, SET_MODAL_INFO} from "../../store/store";
 
 function Favorite() {
     const dispatch = useDispatch();
@@ -18,6 +18,10 @@ function Favorite() {
         dispatch(SET_ALERT_INFO(obj))
     }
 
+    useEffect(()=>{
+        localStorage.setItem('favoritePokemons', JSON.stringify(favoriteData));
+    },[favoriteData])
+
     return (
         <div className='container'>
             {
@@ -27,7 +31,11 @@ function Favorite() {
                         <div className='container'>
                             {favoriteData?.map((pokemon, index) => {
                                 return (
-                                    <div className="site-card-border-less-wrapper" key={index}>
+                                    <div className="site-card-border-less-wrapper" key={index}
+                                         onClick={() => {
+                                             dispatch(RESET_MODAL());
+                                             dispatch(SET_MODAL_INFO(pokemon.name))
+                                         }}>
                                         <Card style={{width: 200}}>
                                             <div className='card-name'>
                                                 {pokemon.name}

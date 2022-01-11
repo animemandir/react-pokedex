@@ -31,7 +31,6 @@ function MyAlert() {
 
             </Alert.Heading>
         </Alert>
-
     );
 };
 

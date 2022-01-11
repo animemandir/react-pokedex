@@ -6,12 +6,14 @@ import {useState} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Favorite from "./components/Favorite/Favorite";
 import {Redirect} from "react-router";
+import MyModal from "./components/Modal/MyModal";
 
 function App() {
     const [paginatedData, setPaginatedData] = useState([]);
     return (
         <BrowserRouter>
             <Nav/>
+            <MyModal/>
             <Switch>
                 <Redirect exact={true} from="/" to="/home"/>
                 <Route path='/home'

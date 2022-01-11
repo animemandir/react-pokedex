@@ -4,9 +4,9 @@ import './PokemonStyle.css'
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {
-    REMOVE_FAVORITE_POKEMON,
+    REMOVE_FAVORITE_POKEMON, RESET_MODAL,
     SET_ALERT_INFO,
-    SET_FAVORITE_DATA,
+    SET_FAVORITE_DATA, SET_MODAL_INFO,
     SET_PAGINATED_DATA,
     SET_POKEMONS
 } from "../store/store";
@@ -18,12 +18,6 @@ function Pokemons() {
     const pokemonsData = useSelector(state => state.pokemons);
     const favoriteData = useSelector(state => state.favoriteData);
 
-//     /           const obj = {
-//     type: 'danger',
-//         message: 'Please complete input...'
-// }
-//
-// dispatch(SET_ALERT_INFO(obj));
 
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon?limit=100`)
@@ -42,9 +36,9 @@ function Pokemons() {
     function addPokemonToFavorite(pokemon) {
         dispatch(SET_FAVORITE_DATA(pokemon));
         const obj = {
-                type: 'success',
-                message: `You add "${pokemon.name}" to favorite.`
-            }
+            type: 'success',
+            message: `You add "${pokemon.name}" to favorite.`
+        }
 
         dispatch(SET_ALERT_INFO(obj));
     }
@@ -54,7 +48,11 @@ function Pokemons() {
         <div className='container'>
             {paginatedData?.map((pokemon, index) => {
                 return (
-                    <div className="site-card-border-less-wrapper" key={index}>
+                    <div className="site-card-border-less-wrapper" key={index}
+                         onClick={() => {
+                             dispatch(RESET_MODAL());
+                             dispatch(SET_MODAL_INFO(pokemon.name))
+                         }}>
                         <Card style={{width: 200}}>
                             <div className='card-name'>
                                 {pokemon.name}
@@ -92,8 +90,8 @@ function Pokemons() {
                                             </div>
                                             :
                                             <span className='info-type'>
-                                                {pokemon.types[0].type.name}
-                                            </span>
+                         {pokemon.types[0].type.name}
+                             </span>
                                     }
                                     <span className='info-desc'>Type</span>
                                 </div>
